@@ -9,12 +9,18 @@
     <title>Create Your Own FizzBuzz!</title>
   </head>
   <body>
-    <form>
+    <div class="container">
+      Let my string range from: <input type="number" id="range1" value="1" /> to
+      <input type="number" id="range2" value="20" /><br />
+      <label for="num1">first number to check</label>
+      <input type="number" id="check1" value="3" /><br />
+      <label for="num2">second number to check</label>
+      <input type="number" id="check2" value="5" /><br />
       <label for="fizz"
         >If number is divisible by 3, it will be replaced by:</label
       >
       <input type="text" id="fizz" value="Fizz" /><br />
-      <label for="fizz"
+      <label for="buzz"
         >If number is divisible by 5, it will be replaced by:</label
       >
       <input type="text" id="buzz" value="Buzz" /><br />
@@ -24,7 +30,8 @@
       <input type="text" id="fizzbuzz" value="FizzBuzz" />
 
       <button type="button" id="button">Click to fizzbuzz</button>
-    </form>
+    </div>
+    <h3 id="finalStr">This should become your string</h3>
     <script src="script.js"></script>
   </body>
 </html>
