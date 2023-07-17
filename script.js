@@ -24,19 +24,21 @@ getRange = (r1, r2) => {
   //push that number into array "range"
 };
 
-// function fizzbuzz(arr) {
-//   for (i = 0; i < arr.length; i++) {
-//     if (arr[i] % 5 == 0 && arr[i] % 3 == 0) {
-//       console.log("FizzBuzz");
-//     } else if (arr[i] % 5 == 0) {
-//       console.log("Buzz");
-//     } else if (arr[i] % 3 == 0) {
-//       console.log("Fizz");
-//     } else {
-//       console.log(arr[i]);
-//     }
-//   }
-// }
+//function to update H3 with appropriate values
+changeH3 = () => {
+  fin.innerHTML =
+    fin.innerHTML = `Your range is from ${range1.value} to ${range2.value}.  Check 1 is: ${check1.value},  Check 2 is: ${check2.value} `;
+};
+//initialize the H3 element
+changeH3();
+
+//event listeners to check that range 1 & range 2 has been input and update the h3 element dynamically
+range1.addEventListener("input", () => {
+  changeH3();
+});
+range2.addEventListener("input", () => {
+  changeH3();
+});
 
 //function to take user inputs and create a fizzbuzz out of it
 function fizzbuzz(arr) {
