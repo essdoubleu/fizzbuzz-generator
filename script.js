@@ -12,16 +12,13 @@ let button = document.getElementById("button");
 
 let fin = document.getElementById("finalStr");
 
-const test = [
-  1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
-];
-
+//function to get an array of integers between two given integers
 getRange = (r1, r2) => {
   let range = [];
-  let i = 0;
-  //initial iterator should be r1
-  //while iterator is >=r1 and <r2, iterate by 1
-  //push that number into array "range"
+  for (i = r1; i < r2 + 1; i++) {
+    range.push(i);
+  }
+  return range;
 };
 
 //function to update H3 with appropriate values
@@ -32,11 +29,17 @@ changeH3 = () => {
 //initialize the H3 element
 changeH3();
 
-//event listeners to check that range 1 & range 2 has been input and update the h3 element dynamically
+//event listeners to check that value of range1, range2, check1, or check2 has been changed and update the h3 element dynamically
 range1.addEventListener("input", () => {
   changeH3();
 });
 range2.addEventListener("input", () => {
+  changeH3();
+});
+check1.addEventListener("input", () => {
+  changeH3();
+});
+check2.addEventListener("input", () => {
   changeH3();
 });
 
@@ -53,22 +56,11 @@ function fizzbuzz(arr) {
       console.log(arr[i]);
     }
   }
-  fin.innerHTML = `Your range is from ${range1.value} to ${range2.value}.  Check 1 is: ${check1.value},  Check 2 is: ${check2.value} `;
 }
 
-// logFizz = () => {
-//   console.log(userFizz.value);
-// };
+function tieItAllTogether() {
+  let userRange = getRange(Number(range1.value), Number(range2.value));
+  fizzbuzz(userRange);
+}
 
-// logBuzz = () => {
-//   console.log(userBuzz.value);
-// };
-
-// logFB = () => {
-//   console.log(userFB.value);
-// };
-
-// button.addEventListener("click", () => logFizz());
-// button.addEventListener("click", () => logBuzz());
-// button.addEventListener("click", () => logFB());
-button.addEventListener("click", () => fizzbuzz(test));
+button.addEventListener("click", () => tieItAllTogether());
