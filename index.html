@@ -4,33 +4,43 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alata&family=Montserrat:wght@700&family=Raleway:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- My Style -->
     <link rel="stylesheet" href="style.css" />
     <title>Create Your Own FizzBuzz!</title>
   </head>
   <body>
     <div class="container">
+      <h1>Create Your Own FizzBuzz!</h1>
       Let my string range from: <input type="number" id="range1" value="1" /> to
       <input type="number" id="range2" value="20" /><br />
       <label for="num1">first number to check</label>
       <input type="number" id="check1" value="3" /><br />
       <label for="num2">second number to check</label>
       <input type="number" id="check2" value="5" /><br />
-      <label for="fizz"
+      <label for="fizz" id="fizzLabel"
         >If number is divisible by 3, it will be replaced by:</label
       >
       <input type="text" id="fizz" value="Fizz" /><br />
-      <label for="buzz"
+      <label for="buzz" id="buzzLabel"
         >If number is divisible by 5, it will be replaced by:</label
       >
       <input type="text" id="buzz" value="Buzz" /><br />
-      <label for="fizzbuzz"
+      <label for="fizzbuzz" id="fizzBuzzLabel"
         >If number is divisible by 3, it will be replaced by:</label
       >
       <input type="text" id="fizzbuzz" value="FizzBuzz" />
 
       <button type="button" id="button">Click to fizzbuzz</button>
       <h3 id="finalStr">This should become your string</h3>
+      <h2 id="strOutput"></h2>
     </div>
     <script src="script.js"></script>
   </body>
