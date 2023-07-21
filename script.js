@@ -17,6 +17,8 @@ let button = document.getElementById("button");
 let fin = document.getElementById("finalStr");
 let realFinalStr = document.getElementById("strOutput");
 
+let code = document.getElementById("codeDisplay");
+
 //function to get an array of integers between the two given integers
 getRange = (r1, r2) => {
   let range = [];
@@ -24,6 +26,26 @@ getRange = (r1, r2) => {
     range.push(i);
   }
   return range;
+};
+
+//function to update textArea
+//NOT WORKING!
+changeTextArea = () => {
+  code.value = `for (i = 0; i < arr.length; i++) {
+    if (arr[i] % check1.value == 0 && arr[i] % check2.value == 0) {
+      console.log(``${userFB.value}``);
+      strOut += ``${userFB.value}, ``;
+    } else if (arr[i] % check2.value == 0) {
+      strOut += ``${userBuzz.value}, ``;
+      console.log(``${userBuzz.value}``);
+    } else if (arr[i] % check1.value == 0) {
+      strOut += ``${userFizz.value}, ``;
+      console.log(``${userFizz.value}``);
+    } else {
+      strOut += ``${arr[i]}, ``;
+      console.log(arr[i]);
+    }
+  }`;
 };
 
 // functions to update labels
@@ -87,6 +109,7 @@ function fizzbuzz(arr) {
 function tieItAllTogether() {
   let userRange = getRange(Number(range1.value), Number(range2.value));
   fizzbuzz(userRange);
+  changeTextArea();
 }
 
 button.addEventListener("click", () => tieItAllTogether());
