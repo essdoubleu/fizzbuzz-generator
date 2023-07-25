@@ -35,3 +35,8 @@ html {
 #button {
   margin-top: 0.5%;
 }
+
+textarea {
+  margin-bottom: 50%;
+  resize: none;
+}

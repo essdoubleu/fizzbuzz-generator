@@ -28,24 +28,22 @@ getRange = (r1, r2) => {
   return range;
 };
 
-//function to update textArea
-//NOT WORKING!
+//function to update textArea with user generated fizzbuzz function
 changeTextArea = () => {
-  code.value = `for (i = 0; i < arr.length; i++) {
-    if (arr[i] % check1.value == 0 && arr[i] % check2.value == 0) {
-      console.log(``${userFB.value}``);
-      strOut += ``${userFB.value}, ``;
-    } else if (arr[i] % check2.value == 0) {
-      strOut += ``${userBuzz.value}, ``;
-      console.log(``${userBuzz.value}``);
-    } else if (arr[i] % check1.value == 0) {
-      strOut += ``${userFizz.value}, ``;
-      console.log(``${userFizz.value}``);
-    } else {
-      strOut += ``${arr[i]}, ``;
-      console.log(arr[i]);
+  code.innerHTML = `
+  function yourFizzBuzz(arr){
+    for (i = 0; i < arr.length; i++) {
+      if (arr[i] % \`${check1.value}\` == 0 && arr[i] % \`${check2.value}\` == 0) {
+        console.log("\`${userFB.value}\`");
+      } else if (arr[i] % \`${check2.value}\` == 0) {
+        console.log("\`${userBuzz.value}\`");
+      } else if (arr[i] % \`${check1.value}\` == 0) {
+        console.log("\`${userFizz.value}\`");
+      } else {
+        console.log(arr[i]);
+      }
     }
-  }`;
+}`.replaceAll("`", "");
 };
 
 // functions to update labels
@@ -72,6 +70,15 @@ range1.addEventListener("input", () => {
   changeH3();
 });
 range2.addEventListener("input", () => {
+  changeH3();
+});
+userFizz.addEventListener("input", () => {
+  changeH3();
+});
+userBuzz.addEventListener("input", () => {
+  changeH3();
+});
+userFB.addEventListener("input", () => {
   changeH3();
 });
 check1.addEventListener("input", () => {
@@ -110,6 +117,7 @@ function tieItAllTogether() {
   let userRange = getRange(Number(range1.value), Number(range2.value));
   fizzbuzz(userRange);
   changeTextArea();
+  console.log(code);
 }
 
 button.addEventListener("click", () => tieItAllTogether());
